@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* first clone project
+* enter to the project folder
+* install de gem with following comand: bundle install 
+ 
+
