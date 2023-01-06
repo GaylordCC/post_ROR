@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+    before_action :authenticate_user!, only:[:create, :update]
+
     rescue_from Exception do |e|
         #log.error "#{e.message}"
         render json: {error: e.message}, status: :unprocessable_entity
@@ -43,5 +45,12 @@ class PostsController < ApplicationController
 
     def update_params
         params.require(:post).permit(:title, :content, :published)
+    end
+
+    def authenticate_user!
+        # leer HEADER de auth
+        # Verificar que sea valido
+        # Verificar que el Token corresponda a user
+        
     end
 end
